@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class DialogContent extends MyMethods {
 
     public DialogContent() {
@@ -41,6 +43,82 @@ public class DialogContent extends MyMethods {
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     private WebElement successMessage;
 
+    @FindBy(xpath = "(//input[@data-placeholder='Name'])[1]")
+    private WebElement nameSearch;
+
+    @FindBy(xpath = "(//input[@data-placeholder='Code'])[1]")
+    private WebElement codeSearch;
+
+    @FindBy(xpath = "//span[text()='Search']")
+    private WebElement searchButton;
+
+    @FindBy(css = "ms-delete-button[class='ng-star-inserted']")
+    private WebElement deleteButton;
+
+    @FindBy(xpath = "//span[contains(text(),'Delete')]")
+    private WebElement confirmDeleteButton;
+
+    @FindBy(css = "ms-delete-button[class='ng-star-inserted']")
+    private List<WebElement>  deleteCountryButtonList;
+
+    @FindBy(xpath = "(//input[@data-placeholder='Short Name'])[2]")
+    private WebElement citizenshipShortName;
+
+    @FindBy(xpath = "(//input[@data-placeholder='Short Name'])[1]")
+    private WebElement citizenshipShortNameSearch;
+
+    @FindBy(xpath = "//input[@data-placeholder='Integration Code']")
+    private WebElement integrationCodeInput;
+
+    @FindBy(xpath = "(//input[@data-placeholder='Priority'])[2]")
+    private WebElement priorityInput;
+
+    @FindBy(xpath = "(//input[@data-placeholder='Priority'])[1]")
+    private WebElement prioritySearchInput;
+
+    public WebElement getPrioritySearchInput() {
+        return prioritySearchInput;
+    }
+
+    public WebElement getIntegrationCodeInput() {
+        return integrationCodeInput;
+    }
+
+    public WebElement getPriorityInput() {
+        return priorityInput;
+    }
+
+    public WebElement getCitizenshipShortNameSearch() {
+        return citizenshipShortNameSearch;
+    }
+
+    public WebElement getCitizenshipShortName() {
+        return citizenshipShortName;
+    }
+
+    public WebElement getNameSearch() {
+        return nameSearch;
+    }
+
+    public WebElement getCodeSearch() {
+        return codeSearch;
+    }
+
+    public WebElement getSearchButton() {
+        return searchButton;
+    }
+
+    public List<WebElement> getDeleteCountryButtonList() {
+        return deleteCountryButtonList;
+    }
+
+    public WebElement getDeleteButton() {
+        return deleteButton;
+    }
+
+    public WebElement getConfirmDeleteButton() {
+        return confirmDeleteButton;
+    }
     public WebElement getFormNameInput() {
         return formNameInput;
     }

@@ -14,11 +14,11 @@ public class Hooks {
         System.out.println("Scenario has started.");
     }
 
-//    @After
-//    public void afterScenario(){
-//        System.out.println("Scenario has ended.");
-//        BasicDriver.quitDriver();
-//    }
+    @After
+    public void afterScenario(){
+        System.out.println("Scenario has ended.");
+        BasicDriver.quitDriver();
+    }
 
 //    @BeforeStep
 //    public void beforeStep(){

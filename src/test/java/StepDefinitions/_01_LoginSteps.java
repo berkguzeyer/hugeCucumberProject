@@ -18,6 +18,7 @@ public class _01_LoginSteps {
     public void navigate_to_campus() {
         BasicDriver.getDriver().get("https://test.mersys.io/");
         BasicDriver.getDriver().manage().window().maximize();
+        BasicDriver.getDriver().manage().deleteAllCookies();
     }
 
     @When("Enter username and password")
@@ -40,7 +41,7 @@ public class _01_LoginSteps {
     public void user_should_login_successfully() {
         dialogContent.waitUntilVisible(dialogContent.getDashboardText());
         Assert.assertTrue(dialogContent.getDashboardText().isDisplayed());
-        dialogContent.clickMethod(dialogContent.getAcceptCookies());
+//        dialogContent.clickMethod(dialogContent.getAcceptCookies());
     }
 
 
