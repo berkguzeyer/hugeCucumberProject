@@ -1,0 +1,21 @@
+#Step 1: Add following dependency to your pom.xml.
+       <dependency>
+            <groupId>tech.grasshopper</groupId>
+            <artifactId>extentreports-cucumber7-adapter</artifactId>
+            <version>1.10.1</version>
+        </dependency>
+
+
+
+#Step 2: Add adapter as a Plugin to your Cucumber Options:
+Plugin
+plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
+
+
+
+#Step 3: Add extent.properties to src/resources/test with below 2 lines
+extent.reporter.spark.start=true
+extent.reporter.spark.out=test-output/SparkReport/Spark.html
+
+
+

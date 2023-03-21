@@ -59,7 +59,7 @@ public class DialogContent extends MyMethods {
     private WebElement confirmDeleteButton;
 
     @FindBy(css = "ms-delete-button[class='ng-star-inserted']")
-    private List<WebElement>  deleteCountryButtonList;
+    private List<WebElement> deleteCountryButtonList;
 
     @FindBy(xpath = "(//input[@data-placeholder='Short Name'])[2]")
     private WebElement citizenshipShortName;
@@ -75,6 +75,70 @@ public class DialogContent extends MyMethods {
 
     @FindBy(xpath = "(//input[@data-placeholder='Priority'])[1]")
     private WebElement prioritySearchInput;
+
+    @FindBy(xpath = "//input[@data-placeholder='Name']")
+    private WebElement entranceExamsCreateNameInput;
+
+    @FindBy(xpath = "//mat-select[@formcontrolname='academicPeriod']")
+    private WebElement academicPeriodSelect;
+
+    @FindBy(xpath = "//span[text()=' 2022-2023 Academic Period ']")
+    private WebElement academicPeriodOption;
+
+    @FindBy(xpath = "//mat-select[@formcontrolname='id']")
+    private WebElement gradeLevelSelect;
+
+    @FindBy(xpath = "(//span[@class='mat-option-text'])[1]")
+    private WebElement gradeLevelOption;
+
+    @FindBy(xpath = "(//div[@role='tab'])[3]")
+    private WebElement description;
+
+    @FindBy(css = "body[id='tinymce']>p")
+    private WebElement descriptionAndNoteInput;
+
+    @FindBy(xpath = "(//div[@role='tab'])[4]")
+    private WebElement note;
+
+
+    @FindBy(css = "iframe[class='tox-edit-area__iframe']")
+    private WebElement iFrame;
+
+    public WebElement getEntranceExamsCreateNameInput() {
+        return entranceExamsCreateNameInput;
+    }
+
+    public WebElement getAcademicPeriodSelect() {
+        return academicPeriodSelect;
+    }
+
+    public WebElement getAcademicPeriodOption() {
+        return academicPeriodOption;
+    }
+
+    public WebElement getGradeLevelSelect() {
+        return gradeLevelSelect;
+    }
+
+    public WebElement getGradeLevelOption() {
+        return gradeLevelOption;
+    }
+
+    public WebElement getDescription() {
+        return description;
+    }
+
+    public WebElement getDescriptionAndNoteInput() {
+        return descriptionAndNoteInput;
+    }
+
+    public WebElement getNote() {
+        return note;
+    }
+
+    public WebElement getiFrame() {
+        return iFrame;
+    }
 
     public WebElement getPrioritySearchInput() {
         return prioritySearchInput;
@@ -119,6 +183,7 @@ public class DialogContent extends MyMethods {
     public WebElement getConfirmDeleteButton() {
         return confirmDeleteButton;
     }
+
     public WebElement getFormNameInput() {
         return formNameInput;
     }
