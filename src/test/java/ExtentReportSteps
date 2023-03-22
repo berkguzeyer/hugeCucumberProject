@@ -8,14 +8,44 @@
 
 
 #Step 2: Add adapter as a Plugin to your Cucumber Options:
-Plugin
-plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
+            Plugin
+            plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 
 
 
 #Step 3: Add extent.properties to src/resources/test with below 2 lines
-extent.reporter.spark.start=true
-extent.reporter.spark.out=test-output/SparkReport/Spark.html
+            extent.reporter.spark.start=true
+            extent.reporter.spark.out=test-output/SparkReport/Spark.html
 
 
 
+#Step 4: https://www.programsbuzz.com/article/how-add-screenshot-cucumber-extent-report-every-step
+
+            To add screenshots to the report, use the following code:
+                        if (scenario.isFailed()) {
+                            final byte[] byteImage = ((TakesScreenshot) BasicDriver.getDriver()).getScreenshotAs(OutputType.BYTES);
+                            scenario.attach(byteImage, "image/png", "screenShot name");
+                        }
+
+#Step 5: to add extent-config.xml file
+
+            add the following line in extent.properties file
+
+            extent.reporter.spark.config=src/test/resources/extent-config.xml
+            create extent-config.xml file in this path
+
+ #Step 6: To add additional info to your report, add following lines in Runner Class:
+
+               @AfterClass
+                public static void writeExtentReport(){
+                    ExtentService.getInstance().setSystemInfo("Windows User Name", System.getProperty("user.name"));
+                    ExtentService.getInstance().setSystemInfo("Time Zone", System.getProperty("user.timezone"));
+                    ExtentService.getInstance().setSystemInfo("User Name", "John Doe");
+                    ExtentService.getInstance().setSystemInfo("Application Name","Campus");
+                    ExtentService.getInstance().setSystemInfo("Operating System Info", System.getProperty("os.name"));
+                    ExtentService.getInstance().setSystemInfo("Department", "QA");
+                }
+
+#Step 7: To get pdf version of the reportd, add the following lines in extent.properties:
+                    extent.reporter.pdf.start=true
+                    extent.reporter.pdf.out=PdfReport.pdf
