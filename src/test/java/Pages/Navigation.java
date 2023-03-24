@@ -1,16 +1,15 @@
 package Pages;
 
-import Utilities.BasicDriver;
+import Utilities.DriverClass;
 import Utilities.MyMethods;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.devtools.v85.page.Page;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class Navigation extends MyMethods { // always extend from "Pages" so you won't have to create to many objects for MyMethods class
 
     public Navigation() {
-        PageFactory.initElements(BasicDriver.getDriver(), this);
+        PageFactory.initElements(DriverClass.getDriver(), this);
     }
 
     @FindBy(xpath = "(//span[text()='Setup'])[1]")

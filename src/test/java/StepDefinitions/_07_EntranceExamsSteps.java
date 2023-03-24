@@ -2,7 +2,7 @@ package StepDefinitions;
 
 import Pages.DialogContent;
 import Pages.Navigation;
-import Utilities.BasicDriver;
+import Utilities.DriverClass;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -36,9 +36,9 @@ public class _07_EntranceExamsSteps {
         List<String> dataList = dataTable.asList(String.class);
         dc.clickMethod(dc.getDescription());
         dc.waitUntilVisible(dc.getiFrame());
-        BasicDriver.getDriver().switchTo().frame(dc.getiFrame());
+        DriverClass.getDriver().switchTo().frame(dc.getiFrame());
         dc.sendKeysMethod(dc.getDescriptionAndNoteInput(), dataList.get(0));
-        BasicDriver.getDriver().switchTo().defaultContent();
+        DriverClass.getDriver().switchTo().defaultContent();
     }
 
     @And("Create a note")
@@ -46,8 +46,8 @@ public class _07_EntranceExamsSteps {
         List<String> dataList = dataTable.asList(String.class);
         dc.clickMethod(dc.getNote());
         dc.waitUntilVisible(dc.getiFrame());
-        BasicDriver.getDriver().switchTo().frame(dc.getiFrame());
+        DriverClass.getDriver().switchTo().frame(dc.getiFrame());
         dc.sendKeysMethod(dc.getDescriptionAndNoteInput(), dataList.get(0));
-        BasicDriver.getDriver().switchTo().defaultContent();
+        DriverClass.getDriver().switchTo().defaultContent();
     }
 }

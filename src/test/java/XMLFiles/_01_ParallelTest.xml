@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests" thread-count="2">
+
+<!--    ***** Don't forget to add parallel and thread-count ******    -->
+
+    <test name="Test with Firefox">
+        <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="Runners._09_RunnerForParallelTest"></class>
+        </classes>
+    </test>
+
+    <test name="Test with Chrome">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="Runners._09_RunnerForParallelTest"></class>
+        </classes>
+    </test>
+</suite>

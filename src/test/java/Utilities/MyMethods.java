@@ -11,7 +11,7 @@ import java.time.Duration;
 public class MyMethods {
 
 
-    public WebDriverWait wait = new WebDriverWait(BasicDriver.getDriver(), Duration.ofSeconds(2));
+    public WebDriverWait wait = new WebDriverWait(DriverClass.getDriver(), Duration.ofSeconds(2));
 
     public void sendKeysMethod(WebElement element, String keys) {
         waitUntilVisible(element);
@@ -27,7 +27,7 @@ public class MyMethods {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
     public void scrollToElement(WebElement element){
-        JavascriptExecutor js = (JavascriptExecutor) BasicDriver.getDriver();
+        JavascriptExecutor js = (JavascriptExecutor) DriverClass.getDriver();
      js.executeScript("arguments[0].scrollIntoView();", element);
     }
     public void clickMethod(WebElement element){

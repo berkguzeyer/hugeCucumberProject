@@ -7,13 +7,12 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
-public class BasicDriver {
-
+public class OldDriverClass {
     private static WebDriver driver;
 
-    public static WebDriver getDriver(){
+    public static WebDriver getDriver() {
 
-        if (driver==null) {
+        if (driver == null) {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--remote-allow-origins=*"); // To solve the error with Chrome v111
             System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
@@ -23,7 +22,7 @@ public class BasicDriver {
         return driver;
     }
 
-    public static void quitDriver(){
+    public static void quitDriver() {
         try {
             Thread.sleep(Duration.ofSeconds(3));
         } catch (InterruptedException e) {
@@ -34,6 +33,4 @@ public class BasicDriver {
         driver = null;
 
     }
-
-
 }
