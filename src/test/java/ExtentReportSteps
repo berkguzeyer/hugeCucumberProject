@@ -46,6 +46,6 @@
                     ExtentService.getInstance().setSystemInfo("Department", "QA");
                 }
 
-#Step 7: To get pdf version of the reportd, add the following lines in extent.properties:
+#Step 7: To get pdf version of the report, add the following lines in extent.properties:
                     extent.reporter.pdf.start=true
                     extent.reporter.pdf.out=PdfReport.pdf
