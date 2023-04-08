@@ -104,6 +104,14 @@ public class DialogContent extends MyMethods {
     @FindBy(css = "iframe[class='tox-edit-area__iframe']")
     private WebElement iFrame;
 
+
+    @FindBy(xpath = "//tbody[@role='rowgroup']/tr/td[2]")
+    private List<WebElement> statesList;
+
+    public List<WebElement> getStatesList() {
+        return statesList;
+    }
+
     public WebElement getEntranceExamsCreateNameInput() {
         return entranceExamsCreateNameInput;
     }
