@@ -1,12 +1,12 @@
 package JDBC.day02;
 
-import Utilities.DBUtilities;
+import Utilities.JDBCConnection;
 import org.testng.annotations.Test;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class _02_FirstAndLastRowGetRowGetType extends DBUtilities {
+public class _02_FirstAndLastRowGetRowGetType extends JDBCConnection {
 
 
     @Test

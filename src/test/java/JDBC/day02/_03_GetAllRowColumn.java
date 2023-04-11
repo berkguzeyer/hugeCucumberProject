@@ -1,14 +1,13 @@
 package JDBC.day02;
 
-import Utilities.DBUtilities;
+import Utilities.JDBCConnection;
 import org.testng.annotations.Test;
 
-import javax.xml.transform.Result;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
-public class _03_GetAllRowColumn extends DBUtilities {
+public class _03_GetAllRowColumn extends JDBCConnection {
 
     @Test
     public void test1() throws SQLException {

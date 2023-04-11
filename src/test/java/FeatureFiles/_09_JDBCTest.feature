@@ -8,6 +8,6 @@ Feature: Testing Database
 
   Scenario: States Testing with JDBC
     Given Navigate to States page
-    When Send the query to the "select * from states"
+    When Send the query "select * from states"
     Then Check if they match with UI
 

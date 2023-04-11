@@ -1,11 +1,11 @@
 package JDBC.day02;
 
-import Utilities.DBUtilities;
+import Utilities.JDBCConnection;
 import org.testng.annotations.Test;
 
 import java.sql.*;
 
-public class _01_AbsoluteRelative extends DBUtilities {
+public class _01_AbsoluteRelative extends JDBCConnection {
 
 
     @Test
