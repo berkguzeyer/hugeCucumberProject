@@ -24,7 +24,7 @@ public class OldDriverClass {
 
     public static void quitDriver() {
         try {
-            Thread.sleep(Duration.ofSeconds(3));
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
