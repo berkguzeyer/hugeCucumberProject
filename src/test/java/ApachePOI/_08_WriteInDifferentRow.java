@@ -1,12 +1,12 @@
 package ApachePOI;
+
 import org.apache.poi.ss.usermodel.*;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class _08_WriteInDifferentRows {
+public class _08_WriteInDifferentRow {
     public static void main(String[] args) {
         String path = "src/test/java/ApachePOI/Resources/WriteIntoAnExcelFile.xlsx";
         Sheet sheet;
@@ -41,7 +41,4 @@ public class _08_WriteInDifferentRows {
             throw new RuntimeException(e);
         }
     }
-
-
-
 }

@@ -14,15 +14,16 @@ Feature: Entrance Exams Functionality
     And Create a description
     |<Description>|
     And Create a note
-      |<Note>|
+    |<Note>|
     When Click on save button
     Then Success message should be displayed
 
     Examples:
-      | Exam Name | Description      | Note                |
-      | B7 Exam 1 | B7 is good       | Batch will end soon |
-#      | B7 Exam 2 | B7 is the best   | Coming soon         |
-#      | B7 Exam 3 | B7 is fun        | Get prepared        |
-#      | B7 Exam 4 | B7 never give up | Don't give up       |
-#      | B7 Exam 5 | B7 is alright    | You can do it       |
+      | Exam Name      | Description           | Note                          |
+      | Batch 7 Exam 1 | Batch 7 is the best   | We are coming soon            |
+      | Batch 7 Exam 2 | Batch 7 rocks         | Get prepared                  |
+      | Batch 7 Exam 3 | Batch 7 is fun        | We are having fun             |
+      | Batch 7 Exam 4 | Batch 7 don't give up | We can do it                  |
+      | Batch 7 Exam 5 | We are almost ready   | But we are better than anyone |
 
+#    TODO Add delete entrance exams scenario for all created exams

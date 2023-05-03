@@ -4,31 +4,30 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class DBUtilities {
+    static Connection connection;
+    static Statement statement;
 
-    public static Connection connection;
-    public static Statement statement;
-
-    public static ArrayList<ArrayList<String>> getData(String query){
+    public static ArrayList<ArrayList<String>> getData(String query) {
         ArrayList<ArrayList<String>> table = new ArrayList<>();
         DBConnectionCreate();
-
         try {
             ResultSet rs = statement.executeQuery(query);
             int columnCount = rs.getMetaData().getColumnCount();
 
-            while(rs.next()){
-                ArrayList<String> innerList = new ArrayList<>();
+            while (rs.next()) {
+                ArrayList<String> innerList = new ArrayList();
                 for (int i = 1; i <= columnCount; i++) {
                     innerList.add(rs.getString(i));
                 }
                 table.add(innerList);
             }
+
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+
         DBConnectionClose();
         return table;
-
     }
 
     public static void DBConnectionCreate() {

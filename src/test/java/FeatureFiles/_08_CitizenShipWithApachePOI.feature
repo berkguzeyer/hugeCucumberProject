@@ -8,4 +8,4 @@ Feature: Citizenship with ApachePOI
     Given Navigate to Citizenships page
 
   Scenario: Create a new citizenship
-    Then Create a citizenship with Apache POI
+    Then Create a citizenship by Apache POI

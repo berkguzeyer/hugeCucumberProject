@@ -1,42 +1,39 @@
 package JDBC.day02;
 
-import Utilities.JDBCConnection;
+import Utilities.JDBCConnetcion;
 import org.testng.annotations.Test;
 
 import java.sql.*;
 
-public class _01_AbsoluteRelative extends JDBCConnection {
-
+public class _01_AbsoluteRelative extends JDBCConnetcion {
 
     @Test
     public void test1() throws SQLException {
 
         ResultSet rs = statement.executeQuery("select * from film");
 
-        rs.absolute(10); // goes to the 10th row right away (no index concept here)
+        rs.absolute(10); // goes to the 10th row right away
         String title = rs.getString("title");
-        System.out.println("10th row" + title);
+        System.out.println("Film title on the 10th row: " + title);
+
+        rs.absolute(15);
+        title = rs.getString("title");
+        System.out.println("Film title on the 15th row: " + title);
 
         rs.absolute(5);
         title = rs.getString("title");
-        System.out.println("5th row: " + title);
+        System.out.println("Film title on the 5th row: " + title);
 
-        rs.relative(20); // moves 20 rows from the current position. in this test, it is going to be 25th row.
+        rs.relative(20); // moves 20 rows from current position. In this case it is 25th row
         title = rs.getString("title");
-        System.out.println("Film on the 25th row: " + title);
+        System.out.println("Film title on the 25th row: " + title);
 
-        rs.relative(3);// moves 3 rows from the current position. in this test, it is going to be 28th row.
+        rs.relative(3);
         title = rs.getString("title");
-        System.out.println("Film on the 28th row: " + title);
+        System.out.println("Film title on the 28th row: " + title);
 
-        rs.relative(-10);// moves back 10 rows from the current position. in this test, it is going to be 18th row.
+        rs.relative(-10);
         title = rs.getString("title");
-        System.out.println("Film on the 18th row: " + title);
-
-
-
-        connection.close();
-
+        System.out.println("Film title on the 18th row: " + title);
     }
-
 }

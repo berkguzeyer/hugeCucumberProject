@@ -35,8 +35,8 @@ public class _07_EntranceExamsSteps {
     public void createADescription(DataTable dataTable) {
         List<String> dataList = dataTable.asList(String.class);
         dc.clickMethod(dc.getDescription());
-        dc.waitUntilVisible(dc.getiFrame());
-        DriverClass.getDriver().switchTo().frame(dc.getiFrame());
+        dc.waitUntilVisible(dc.getDescriptionAndNoteIFrame());
+        DriverClass.getDriver().switchTo().frame(dc.getDescriptionAndNoteIFrame());
         dc.sendKeysMethod(dc.getDescriptionAndNoteInput(), dataList.get(0));
         DriverClass.getDriver().switchTo().defaultContent();
     }
@@ -45,8 +45,8 @@ public class _07_EntranceExamsSteps {
     public void createANote(DataTable dataTable) {
         List<String> dataList = dataTable.asList(String.class);
         dc.clickMethod(dc.getNote());
-        dc.waitUntilVisible(dc.getiFrame());
-        DriverClass.getDriver().switchTo().frame(dc.getiFrame());
+        dc.waitUntilVisible(dc.getDescriptionAndNoteIFrame());
+        DriverClass.getDriver().switchTo().frame(dc.getDescriptionAndNoteIFrame());
         dc.sendKeysMethod(dc.getDescriptionAndNoteInput(), dataList.get(0));
         DriverClass.getDriver().switchTo().defaultContent();
     }

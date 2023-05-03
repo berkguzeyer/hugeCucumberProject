@@ -20,6 +20,7 @@ public class _04_DataTableSteps {
         for (String element : formInfoElements) {
             System.out.println(element);
         }
+
     }
 
     @Then("Save the form")
@@ -29,13 +30,12 @@ public class _04_DataTableSteps {
 
     @And("Enter Valid information")
     public void enterValidInformation(DataTable formInfo) {
-        List<List<String>> formInfoElements = formInfo.asLists(String.class); // This time there are 2 columns -  so we need a 2D ArrayList.
+        List<List<String>> formInfoElements = formInfo.asLists(String.class);
 
-        for (List<String> list : formInfoElements) { // We have a nested loop since it is a 2D ArrayList.
-            for (String element : list) {
-                System.out.println(element);
+        for (List<String> list : formInfoElements) {
+            for (String info : list) {
+                System.out.println(info);
             }
         }
-
     }
 }

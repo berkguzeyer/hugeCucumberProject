@@ -20,14 +20,15 @@ public class DialogContent extends MyMethods {
     @FindBy(xpath = "//input[@placeholder='Password']")
     private WebElement loginPassword;
 
-    @FindBy(xpath = "//button[@aria-label='LOGIN']")
+    @FindBy(xpath = "//span[contains(text(),' LOGIN ')]")
     private WebElement loginButton;
 
     @FindBy(xpath = "//div[@class='ng-star-inserted']//span[contains(text(),'Dashboard')]")
-    private WebElement dashboardText;
+    private WebElement dashBoardHeader;
 
     @FindBy(css = "svg[class='svg-inline--fa fa-plus']")
     private WebElement addButton;
+
     @FindBy(xpath = "(//input[@data-placeholder='Name'])[2]")
     private WebElement formNameInput;
 
@@ -37,11 +38,11 @@ public class DialogContent extends MyMethods {
     @FindBy(xpath = "//span[text()='Save']")
     private WebElement saveButton;
 
-    @FindBy(xpath = "//div[@id='cconsent-bar']//button[@class='consent-give']")
-    private WebElement acceptCookies;
-
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     private WebElement successMessage;
+
+    @FindBy(xpath = "//div[@id='cconsent-bar']//button[@class='consent-give']")
+    private WebElement acceptCookies;
 
     @FindBy(xpath = "(//input[@data-placeholder='Name'])[1]")
     private WebElement nameSearch;
@@ -55,20 +56,20 @@ public class DialogContent extends MyMethods {
     @FindBy(css = "ms-delete-button[class='ng-star-inserted']")
     private WebElement deleteButton;
 
-    @FindBy(xpath = "//span[contains(text(),'Delete')]")
-    private WebElement confirmDeleteButton;
-
     @FindBy(css = "ms-delete-button[class='ng-star-inserted']")
     private List<WebElement> deleteCountryButtonList;
+
+    @FindBy(xpath = "//span[contains(text(),'Delete')]")
+    private WebElement confirmDeleteButton;
 
     @FindBy(xpath = "(//input[@data-placeholder='Short Name'])[2]")
     private WebElement citizenshipShortName;
 
     @FindBy(xpath = "(//input[@data-placeholder='Short Name'])[1]")
-    private WebElement citizenshipShortNameSearch;
+    private WebElement citizenShipShortNameSearch;
 
     @FindBy(xpath = "//input[@data-placeholder='Integration Code']")
-    private WebElement integrationCodeInput;
+    private WebElement integrationCode;
 
     @FindBy(xpath = "(//input[@data-placeholder='Priority'])[2]")
     private WebElement priorityInput;
@@ -100,16 +101,94 @@ public class DialogContent extends MyMethods {
     @FindBy(xpath = "(//div[@role='tab'])[4]")
     private WebElement note;
 
-
     @FindBy(css = "iframe[class='tox-edit-area__iframe']")
-    private WebElement iFrame;
+    private WebElement descriptionAndNoteIFrame;
 
-
-    @FindBy(xpath = "//tbody[@role='rowgroup']/tr/td[2]")
+    @FindBy(xpath = "//tbody[@role='rowgroup']//td[2]")
     private List<WebElement> statesList;
 
-    public List<WebElement> getStatesList() {
-        return statesList;
+    public WebElement getLoginUsername() {
+        return loginUsername;
+    }
+
+    public WebElement getLoginPassword() {
+        return loginPassword;
+    }
+
+    public WebElement getLoginButton() {
+        return loginButton;
+    }
+
+    public WebElement getDashBoardHeader() {
+        return dashBoardHeader;
+    }
+
+    public WebElement getAddButton() {
+        return addButton;
+    }
+
+    public WebElement getFormNameInput() {
+        return formNameInput;
+    }
+
+    public WebElement getFormCodeInput() {
+        return formCodeInput;
+    }
+
+    public WebElement getSaveButton() {
+        return saveButton;
+    }
+
+    public WebElement getSuccessMessage() {
+        return successMessage;
+    }
+
+    public WebElement getAcceptCookies() {
+        return acceptCookies;
+    }
+
+    public WebElement getNameSearch() {
+        return nameSearch;
+    }
+
+    public WebElement getCodeSearch() {
+        return codeSearch;
+    }
+
+    public WebElement getSearchButton() {
+        return searchButton;
+    }
+
+    public WebElement getDeleteButton() {
+        return deleteButton;
+    }
+
+    public WebElement getConfirmDeleteButton() {
+        return confirmDeleteButton;
+    }
+
+    public List<WebElement> getDeleteCountryButtonList() {
+        return deleteCountryButtonList;
+    }
+
+    public WebElement getCitizenshipShortName() {
+        return citizenshipShortName;
+    }
+
+    public WebElement getCitizenShipShortNameSearch() {
+        return citizenShipShortNameSearch;
+    }
+
+    public WebElement getIntegrationCode() {
+        return integrationCode;
+    }
+
+    public WebElement getPriorityInput() {
+        return priorityInput;
+    }
+
+    public WebElement getPrioritySearchInput() {
+        return prioritySearchInput;
     }
 
     public WebElement getEntranceExamsCreateNameInput() {
@@ -144,91 +223,11 @@ public class DialogContent extends MyMethods {
         return note;
     }
 
-    public WebElement getiFrame() {
-        return iFrame;
+    public WebElement getDescriptionAndNoteIFrame() {
+        return descriptionAndNoteIFrame;
     }
 
-    public WebElement getPrioritySearchInput() {
-        return prioritySearchInput;
-    }
-
-    public WebElement getIntegrationCodeInput() {
-        return integrationCodeInput;
-    }
-
-    public WebElement getPriorityInput() {
-        return priorityInput;
-    }
-
-    public WebElement getCitizenshipShortNameSearch() {
-        return citizenshipShortNameSearch;
-    }
-
-    public WebElement getCitizenshipShortName() {
-        return citizenshipShortName;
-    }
-
-    public WebElement getNameSearch() {
-        return nameSearch;
-    }
-
-    public WebElement getCodeSearch() {
-        return codeSearch;
-    }
-
-    public WebElement getSearchButton() {
-        return searchButton;
-    }
-
-    public List<WebElement> getDeleteCountryButtonList() {
-        return deleteCountryButtonList;
-    }
-
-    public WebElement getDeleteButton() {
-        return deleteButton;
-    }
-
-    public WebElement getConfirmDeleteButton() {
-        return confirmDeleteButton;
-    }
-
-    public WebElement getFormNameInput() {
-        return formNameInput;
-    }
-
-    public WebElement getFormCodeInput() {
-        return formCodeInput;
-    }
-
-    public WebElement getSaveButton() {
-        return saveButton;
-    }
-
-    public WebElement getAddButton() {
-        return addButton;
-    }
-
-    public WebElement getLoginUsername() {
-        return loginUsername;
-    }
-
-    public WebElement getLoginPassword() {
-        return loginPassword;
-    }
-
-    public WebElement getDashboardText() {
-        return dashboardText;
-    }
-
-    public WebElement getSuccessMessage() {
-        return successMessage;
-    }
-
-    public WebElement getLoginButton() {
-        return loginButton;
-    }
-
-    public WebElement getAcceptCookies() {
-        return acceptCookies;
+    public List<WebElement> getStatesList() {
+        return statesList;
     }
 }

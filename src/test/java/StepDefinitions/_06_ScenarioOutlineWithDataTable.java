@@ -8,14 +8,12 @@ import io.cucumber.java.en.When;
 
 import java.util.List;
 
-public class _06_ScenarioOutlineWithDataTableSteps {
-
+public class _06_ScenarioOutlineWithDataTable {
     @Given("Step one")
     public void stepOne(DataTable dataTable) {
         List<List<String>> dataList = dataTable.asLists(String.class);
         System.out.println(dataList.get(0).get(0));
         System.out.println(dataList.get(0).get(1));
-
     }
 
     @When("Step two")

@@ -10,11 +10,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class _02_CountrySteps {
 
-
-    Navigation nv = new Navigation();
     DialogContent dc = new DialogContent();
-
-    @And("Navigate to Country Page")
+    Navigation nv = new Navigation();
+    @And("Navigate to Country page")
     public void navigateToCountryPage() {
         nv.clickMethod(nv.getSetupBtn());
         nv.clickMethod(nv.getParameterBtn());
@@ -23,24 +21,23 @@ public class _02_CountrySteps {
 
     @When("Create a new country")
     public void createANewCountry() {
-        nv.clickMethod(dc.getAddButton());
-        nv.sendKeysMethod(dc.getFormNameInput(), "TEST321321321321");
-        nv.sendKeysMethod(dc.getFormCodeInput(), "TEST321321321321");
-        dc.waitUntilClickable(dc.getSaveButton());
-        nv.clickMethod(dc.getSaveButton());
+        dc.clickMethod(dc.getAddButton());
+        dc.sendKeysMethod(dc.getFormNameInput(),"USA1");
+        dc.sendKeysMethod(dc.getFormCodeInput(),"U1");
+        dc.clickMethod(dc.getSaveButton());
     }
 
     @Then("Success message should be displayed")
     public void successMessageShouldBeDisplayed() {
-        nv.verifyContainsText(dc.getSuccessMessage(), "successfully");
+        dc.verifyContainsText(dc.getSuccessMessage(),"successfully");
     }
 
     @When("Delete country")
     public void deleteCountry() {
-        dc.sendKeysMethod(dc.getNameSearch(),"TEST321321321321");
-        dc.sendKeysMethod(dc.getCodeSearch(),"TEST321321321321");
+        dc.sendKeysMethod(dc.getNameSearch(),"USA1");
+        dc.sendKeysMethod(dc.getCodeSearch(),"U1");
         dc.clickMethod(dc.getSearchButton());
-        dc.wait.until(ExpectedConditions.not(ExpectedConditions.numberOfElementsToBe(By.cssSelector("ms-delete-button[class='ng-star-inserted']"), 10)));
+        dc.wait.until(ExpectedConditions.numberOfElementsToBeLessThan(By.cssSelector("ms-delete-button[class='ng-star-inserted']"),10));
         dc.clickMethod(dc.getDeleteButton());
         dc.clickMethod(dc.getConfirmDeleteButton());
     }
@@ -52,8 +49,8 @@ public class _02_CountrySteps {
 
     @When("Enter country name as {string} and code as {string}")
     public void enterCountryNameAsAndCodeAs(String countryName, String countryCode) {
-        dc.sendKeysMethod(dc.getFormNameInput(), countryName);
-        dc.sendKeysMethod(dc.getFormCodeInput(), countryCode);
+        dc.sendKeysMethod(dc.getFormNameInput(),countryName);
+        dc.sendKeysMethod(dc.getFormCodeInput(),countryCode);
     }
 
     @And("Click on save button")

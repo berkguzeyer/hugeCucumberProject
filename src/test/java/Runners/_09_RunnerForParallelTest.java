@@ -6,22 +6,17 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
-import java.sql.Driver;
-
 @CucumberOptions(
         tags = "@Regression",
         features = {"src/test/java/FeatureFiles"},
-        glue = "StepDefinitions",
+        glue = {"StepDefinitions"},
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
-
 public class _09_RunnerForParallelTest extends AbstractTestNGCucumberTests {
-
     @BeforeClass
     @Parameters(value = "browser")
     public void beforeClass(String browserName){
         DriverClass.setThreadDriverName(browserName);
-
     }
 
 }

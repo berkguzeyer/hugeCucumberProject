@@ -1,12 +1,12 @@
-Feature: Data Table Usage
+Feature: Data Table Example
 
   Scenario:
     Given Go to the WebPage
     And Fill the form with valid data
-      | Brian            |
-      | Doe              |
-      | 5214 Spring Ave. |
-      | 5874584129       |
+      | John             |
+      | Snow             |
+      | 2356 Spring Ave. |
+      | 8654123658       |
     Then Save the form
 
   Scenario:
@@ -23,5 +23,7 @@ Feature: Data Table Usage
       | Phone     | 8654123658       |
     Then Save the form
 
-#    `Scenario outline` runs the entire scenario for each set of data
-#    `Data table` sends the data only one step at a time and scenario only runs once
+#  Scenario outline runs the entire scenario for each set of data
+#  Data table sends the entire data to only one step at the same time
+#  and runs the scenario once
+

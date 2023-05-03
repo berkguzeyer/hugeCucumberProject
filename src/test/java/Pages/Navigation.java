@@ -6,10 +6,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Navigation extends MyMethods { // always extend from "Pages" so you won't have to create to many objects for MyMethods class
+public class Navigation extends MyMethods {
 
-    public Navigation() {
-        PageFactory.initElements(DriverClass.getDriver(), this);
+    public Navigation(){
+        PageFactory.initElements(DriverClass.getDriver(),this);
     }
 
     @FindBy(xpath = "(//span[text()='Setup'])[1]")
@@ -39,8 +39,24 @@ public class Navigation extends MyMethods { // always extend from "Pages" so you
     @FindBy(xpath = "//span[text()='States']")
     private WebElement statesBtn;
 
-    public WebElement getStatesBtn() {
-        return statesBtn;
+    public WebElement getSetupBtn() {
+        return setupBtn;
+    }
+
+    public WebElement getParameterBtn() {
+        return parameterBtn;
+    }
+
+    public WebElement getCountriesBtn() {
+        return countriesBtn;
+    }
+
+    public WebElement getCitizenshipButton() {
+        return citizenshipButton;
+    }
+
+    public WebElement getFeesButton() {
+        return feesButton;
     }
 
     public WebElement getEntranceExamsButton() {
@@ -55,23 +71,7 @@ public class Navigation extends MyMethods { // always extend from "Pages" so you
         return entranceExamsInnerButton;
     }
 
-    public WebElement getFeesButton() {
-        return feesButton;
-    }
-
-    public WebElement getCitizenshipButton() {
-        return citizenshipButton;
-    }
-
-    public WebElement getSetupBtn() {
-        return setupBtn;
-    }
-
-    public WebElement getParameterBtn() {
-        return parameterBtn;
-    }
-
-    public WebElement getCountriesBtn() {
-        return countriesBtn;
+    public WebElement getStatesBtn() {
+        return statesBtn;
     }
 }

@@ -1,6 +1,7 @@
-
-1) What is JDBC? (JAVA DATABASE CONNECTION)
-- It is a library that I can use to automate database tests. It stands for `JAVA DATABASE CONNECTION`.
+1) What is JDBC?
+It is a library that I can use to automate database tests.
+It stands for Java Data Base Connection
 
 2) How do you use it?
-- I create a connection to the database by using URL, username and password. Then I send my queries and get the results and compare them with the UI.
+I create a connection to the database by using URL, username and password.
+Then I sent my queries and get the results and compare them with the UI.
