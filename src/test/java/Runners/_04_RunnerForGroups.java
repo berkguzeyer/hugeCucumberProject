@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
         tags = "@SmokeTest", //Runs features that only have this annotation/tag
         features = {"src/test/java/FeatureFiles"},
         glue = {"StepDefinitions"},
-        plugin = {"pretty”, “junit:target/site/cucumber-pretty”, “json:target/cucumber/cucumber.json"}
+        plugin = {"pretty”, “html:target/site/cucumber-pretty”, “json:target/cucumber/cucumber.json"}
 )
 public class _04_RunnerForGroups extends AbstractTestNGCucumberTests {
 }
